@@ -1,0 +1,6 @@
+{
+    "require": {
+        "slim/slim": "^3.0",
+        "firebase/php-jwt": "dev-master"
+    }
+}

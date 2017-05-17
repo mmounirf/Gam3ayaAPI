@@ -1,0 +1,76 @@
+
+Endpoint					Method 	passed_values				returned data
+
+#####################
+# system end points #
+#####################
+
+/login						post	username,password			token
+
+/users/join					post	username,					null
+									password,
+									fullname,
+									phone,
+									mail,
+									address,
+									fb,
+									pp,
+									*** pp .. profile picture
+
+groups/join/{code}			get 	token						group info
+
+
+####################
+# admin end points #
+####################
+
+/users						get		token						all users info
+
+/groups						get 	token						all groups info
+
+
+
+###################
+# user end points #
+###################
+
+/users/me					get		token						user's info
+
+/users/me					put		token,						null
+									username,
+									password,
+									fullname,
+									phone,
+									mail,
+									address,
+									fb,
+									pp,
+									*** pp .. profile picture
+									****** send data required to be updated not all data
+
+
+
+
+#####################
+# groubs end points #
+#####################
+
+/me/create_group			post 	token,						created group info
+									gtitle,
+									gdesc,
+									gpay
+
+/groups/{group}				get 	token						group data ,, u must be user in it
+
+
+/groups/{group}				put 	token,						null
+									gtitle,
+									gdesc,
+									gpay,
+									usrs
+									** usrs is a complete string of users IDs separated by "," eg. 1,4,5,6
+
+/groups/{group}/invite		get 	token						url for invitation
+
+/groups/{group}/update_status put 	token,paid					null
+									*** paid is the index of the user who paid
